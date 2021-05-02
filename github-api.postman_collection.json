@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "74af12b2-7611-43a0-804c-01b3de8794c1",
+		"name": "github-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SingUp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authtoken",
+						"value": "{{GITHUB_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":{\r\n    \"email\":\"example@email.com\",\r\n    \"password\":\"YourPassword\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/user/signUp",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"signUp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logIn",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authtoken",
+						"value": "{{GITHUB_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3010/user/logIn/example@email.com/YourPassword",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"user",
+						"logIn",
+						"example@email.com",
+						"YourPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by license",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFubWkuc2FlekBnbWFpbDMuY29tIiwiaWF0IjoxNjE5OTQwNjc3LCJleHAiOjE2MjAwMjcwNzcsImF1dGh0b2tlbiI6ImdocF9CVHNTODZGc0FYMVlhRW9TNjF2M1pZU3NWQWhCS2owOEM4Z3YifQ.VEXuFMg1Tk90l48klWjx_1o3IjoIDxCtlBGScIXPclU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3010/search/searchByLicense/MIT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"search",
+						"searchByLicense",
+						"MIT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list starred",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{APP_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3010/search/starred",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"search",
+						"starred"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh starred",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{APP_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3010/search/refreshStarred",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"search",
+						"refreshStarred"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
