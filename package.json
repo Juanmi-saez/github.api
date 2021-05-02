@@ -1,0 +1,30 @@
+{
+  "name": "github-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "doc": "node ./src/swagger.js",
+    "serve": "node ./src/index.js",
+    "start": "node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "4.16.4",
+    "express-joi-validation": "0.3.0",
+    "joi": "14.3.1",
+    "jwt-simple": "0.5.6",
+    "redis": "2.8.0",
+    "moment": "2.29.1 ",
+    "mongodb": "^3.6.6",
+    "octonode": "^0.10.2",
+    "uuid": "3.3.2",
+    "jest": "24.8.0",
+    "sinon": "^7.3.2",
+    "swagger-autogen": "^2.3.4",
+    "swagger-ui-express": "^4.1.4"
+  }
+}
