@@ -1,0 +1,25 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    expose:
+      - 27017
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - '6379:6379'
+    expose:
+      - 6379
+  githubapi:
+    build: .
+    command: node ./src/index.js
+    environment:
+      REDIS_NAME: redis
+      MONGO_NAME: mongodb://mongodb:27017
+    ports:
+      - '3001:3001'
+    expose:
+      - 3001
