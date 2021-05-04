@@ -24,4 +24,11 @@ To run the code you will need mongoDb running at 27017 and redis at 6379,after t
 1. npm install(first time)
 2. npm start
 
+UPDATE: I have added a docker-compose to make easier to run, just execute:
+
+1.docker-compose build
+1.docker-compose up
+
+The app will be running at port 3001
+
 May the force be with you
