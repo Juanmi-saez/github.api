@@ -10,9 +10,18 @@ again the authtoken, i feel this will make tha api a little more secure then jus
 The information of the user will be store in MongoDb and for making the search faster I decided to use Redis as cache, the cache is temporary
 but is the user wants to refresh it faster can user the refresh endpoint.
 
+I have divided the app in 2 main services auth and search, auth manage the user's info and the communication whit mongoDb and search manage the
+communication with git-hub and the cached data
+
 I'm adding a postman collection for testing, you will need to replace 2 vars:
 
 {{GITHUB_TOKEN}} = User git hub token
 {{APP_TOKEN}} = Token returned for signUp and logIn urls
+
+
+To run the code you will need mongoDb running at 27017 and redis at 6379,after that you need to execute:
+
+1. npm install(first time)
+2. npm start
 
 May the force be with you

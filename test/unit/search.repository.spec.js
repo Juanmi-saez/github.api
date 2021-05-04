@@ -1,10 +1,25 @@
 const searchRepository = require('../../src/app/search/search.repository');
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFubWkuc2FlekBnbWFpbDMuY29tIiwiaWF0IjoxNjE5OTQwNjc3LCJleHAiOjE2MjAwMjcwNzcsImF1dGh0b2tlbiI6ImdocF9CVHNTODZGc0FYMVlhRW9TNjF2M1pZU3NWQWhCS2owOEM4Z3YifQ.VEXuFMg1Tk90l48klWjx_1o3IjoIDxCtlBGScIXPclU';
+const token = 'testToken';
 
 jest.mock('../../src/common/db/redis',() =>({
         setAsync: async ()=>{return []},
         delAsync: async()=>{return []},
         getAsync: async()=>{return null}
+}))
+
+jest.mock('jwt-simple',()=>({
+    decode: () => {return []}
+}))
+
+jest.mock('octonode',()=>({
+    client: ()=>({
+        me: ()=>({
+            starredAsync: ()=>{return []}
+        }),
+        search: ()=>({
+            reposAsync: ()=>{return []}
+        })
+    })
 }))
 
 describe('Search repository', () => {
